@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{menu:false}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sameer Alam | Web Developer</title>
+  <meta name="description" content="Sameer Alam | Web Developer specializing in cyberpunk UI, frontend & backend systems.">
+<meta name="keywords" content="Sameer Alam, Web Developer, Full Stack Developer, Portfolio">
+<meta name="author" content="Sameer Alam">
+<link rel="icon" type="image/jpg" href="./images/favicon.jpg">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Alpine -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background:#05010d; }
+    h1,h2,h3 { font-family: 'Orbitron', sans-serif; }
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .neon {
+      text-shadow: 0 0 10px #8b5cf6, 0 0 20px #22d3ee;
+    }
+    .glitch {
+  position: relative;
+  color: #fff;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+.glitch::before {
+  animation: glitchTop 1s infinite linear alternate-reverse;
+  color: #22d3ee;
+}
+.glitch::after {
+  animation: glitchBottom 1.5s infinite linear alternate-reverse;
+  color: #ec4899;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
+  100% { clip-path: inset(0 0 20% 0); transform: translate(2px, 2px); }
+}
+@keyframes glitchBottom {
+  0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
+  100% { clip-path: inset(20% 0 0 0); transform: translate(-2px, -2px); }
+}
+.social-link {
+  position: relative;
+}
+
+.social-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #22d3ee;
+  color: black;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.social-link:hover::after {
+  opacity: 1;
+}
+
+.social-link:hover i {
+  text-shadow: 0 0 15px #22d3ee;
+}
+.profile-pic {
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #22d3ee;
+  }
+  50% {
+    box-shadow: 0 0 25px #8b5cf6;
+  }
+  100% {
+    box-shadow: 0 0 10px #22d3ee;
+  }
+}
+
+  </style>
+</head>
+
+<body class="text-white overflow-x-hidden">
+
+<!-- ================= NAV ================= -->
+<header class="fixed w-full z-50 glass">
+  <nav class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <h1 class="tracking-widest text-cyan-400">SAMEER://OS</h1>
+    <ul class="hidden md:flex gap-8 text-sm text-gray-300">
+      <li><a href="#identity">Identity</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#system">System</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="relative h-screen flex items-center justify-center">
+  <div id="particles-js" class="absolute inset-0"></div>
+
+  <div class="relative z-10 text-center max-w-4xl animate__animated animate__fadeInUp">
+    <!-- 👤 PROFILE PHOTO -->
+<img src="./images/sameer.jpeg"
+     alt="Sameer Alam"
+     class="profile-pic mx-auto mb-6 w-40 h-40 rounded-full border-4 border-cyan-400 shadow-lg hover:scale-105 transition object-cover">
+
+
+    <h2 class="glitch text-5xl md:text-7xl font-extrabold neon" data-text="SAMEER ALAM">
+SAMEER ALAM
+</h2>
+
+    <p class="mt-4 text-cyan-400 tracking-widest">WEB DEVELOPER</p>
+
+    <p class="mt-6 text-gray-300 text-lg">
+  <span id="typing"></span>
+</p>
+
+
+    <a href="#system" class="inline-block mt-10 px-10 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-400 text-black font-semibold hover:scale-105 transition">
+      ENTER SYSTEM
+    
+    </a>
+    <a href="./resume/Sameer_Alam_Resume.pdf"
+   download
+   class="inline-block mt-4 px-8 py-3 border border-cyan-400 text-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition">
+  DOWNLOAD RESUME
+</a>
+
+  </div>
+</section>
+
+<!-- ================= IDENTITY ================= -->
+<section id="identity" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+    <div>
+      <h3 class="text-3xl font-bold mb-4 text-purple-400">🧬 Identity Module</h3>
+      <p class="text-gray-300 leading-relaxed">
+        I’m Sameer Alam, a Web Developer who doesn’t just build pages —
+        I design **digital systems**.
+        My work blends frontend creativity with backend logic,
+        ensuring performance, scalability, and clean architecture.
+      </p>
+    </div>
+
+    <div class="glass p-8 rounded-xl">
+      <ul class="space-y-3 text-sm text-gray-300">
+        <li>⚡ Cyberpunk UI Thinking</li>
+        <li>🧠 Backend Logic First</li>
+        <li>🔐 Secure & Scalable Design</li>
+        <li>🚀 Performance-Oriented Builds</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section id="stack" class="py-24 bg-gradient-to-b from-[#05010d] to-black">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12 text-cyan-400">
+      🛠 Tech Stack Core
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass p-6 rounded-xl">
+        <h4 class="mb-3 text-purple-400 font-semibold">Frontend</h4>
+        <p class="text-sm text-gray-300">
+          HTML • CSS • Tailwind • JavaScript • UI/UX Engineering
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-xl">
+        <h4 class="mb-3 text-purple-400 font-semibold">Backend</h4>
+        <p class="text-sm text-gray-300">
+          Node.js • APIs • Authentication • Databases
+        </p>
+      </div>
+
+      <div class="glass p-6 rounded-xl">
+        <h4 class="mb-3 text-purple-400 font-semibold">System Design</h4>
+        <p class="text-sm text-gray-300">
+          Architecture • Security • Optimization • Deployment
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SYSTEM (PROJECT) ================= -->
+<section id="system" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold mb-12 text-center text-pink-400">
+      🧪 Active System
+    </h3>
+
+    <div class="glass p-10 rounded-xl hover:scale-105 transition">
+      <h4 class="text-2xl font-semibold mb-4 text-cyan-400">
+        Cyberpunk Portfolio Engine
+      </h4>
+      <p class="text-gray-300">
+        This portfolio itself is a live project —
+        engineered as a futuristic developer system
+        showcasing frontend aesthetics, backend thinking,
+        animations, performance, and architecture.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONNECT ================= -->
+<section id="connect" class="py-24 bg-black">
+  <div class="max-w-4xl mx-auto text-center px-6">
+    <h3 class="text-3xl font-bold mb-6 text-purple-400">
+      📡 Establish Connection
+    </h3>
+
+    <p class="text-gray-300 mb-8">
+      If you’re looking for a developer who thinks beyond templates,
+      let’s build something unforgettable.
+    </p>
+    <!-- 🔥 BACKEND CONTACT FORM -->
+<form id="contactForm" class="space-y-4 max-w-md mx-auto mb-10">
+  <input class="w-full p-3 bg-black border border-cyan-400 text-white" placeholder="Name" required>
+  <input class="w-full p-3 bg-black border border-cyan-400 text-white" placeholder="Email" required>
+  <textarea class="w-full p-3 bg-black border border-cyan-400 text-white" placeholder="Message" required></textarea>
+  <button class="w-full py-3 bg-cyan-400 text-black font-bold">
+    SEND MESSAGE
+  </button>
+</form>
+
+
+    <div class="flex justify-center gap-8 text-2xl">
+
+  <!-- GitHub -->
+  <a href="https://github.com/Sameeralam0786"
+     target="_blank"
+     class="hover:text-cyan-400 social-link"
+     data-tooltip="View GitHub Projects">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/sameer-alam-13b25b2b2"
+     target="_blank"
+     class="hover:text-cyan-400 social-link"
+     data-tooltip="Connect with Sameer Alam">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <!-- Email -->
+  <a href="mailto:samifatiya0786@gmail.com"
+     class="hover:text-cyan-400 social-link"
+     data-tooltip="Send Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+</div>
+</section>
+
+<footer class="py-6 text-center text-sm text-gray-500">
+  © 2026 | SameerOS v1.0
+</footer>
+
+<!-- ================= PARTICLES CONFIG ================= -->
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 90 },
+    color: { value: ["#8b5cf6","#22d3ee"] },
+    shape: { type: "circle" },
+    opacity: { value: 0.6 },
+    size: { value: 2 },
+    move: { speed: 1 }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "repulse" }
+    }
+  }
+});
+</script>
+<script>
+const text = "Designing cyber-grade interfaces | Engineering backend systems | Building digital futures";
+let index = 0;
+
+function typeEffect() {
+  if (index < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 50);
+  }
+}
+typeEffect();
+</script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const inputs = e.target.elements;
+
+  await fetch("http://localhost:5000/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: inputs[0].value,
+      email: inputs[1].value,
+      message: inputs[2].value
+    })
+  });
+
+  alert("Message Sent Successfully ⚡");
+});
+</script>
+
+</body>
+</html>
